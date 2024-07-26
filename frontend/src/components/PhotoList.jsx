@@ -56,47 +56,12 @@ const sampleDataForPhotoList = [
   },
 ];
 
-const PhotoList = ({ photos, modalState, modalDispatch, dispatch, state }) => {
-  return (
-    <ul className="photo-list">
-      {photos.map((photo) => (
-        <PhotoListItem
-          key={photo.id}
-          data={photo}
-          modalState={modalState}
-          modalDispatch={modalDispatch}
-          dispatch={dispatch}
-          state={state}
-        />
-      ))}
-    </ul>
-  );
-};
-
-PhotoList.propTypes = {
-  photos: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      location: PropTypes.shape({
-        city: PropTypes.string,
-        country: PropTypes.string,
-      }),
-      urls: PropTypes.shape({
-        full: PropTypes.string,
-        regular: PropTypes.string,
-      }),
-      user: PropTypes.shape({
-        id: PropTypes.string,
-        username: PropTypes.string,
-        name: PropTypes.string,
-        profile: PropTypes.string,
-      }),
-    })
-  ).isRequired,
-  modalState: PropTypes.object.isRequired,
-  modalDispatch: PropTypes.func.isRequired,
-  dispatch: PropTypes.func.isRequired,
-  state: PropTypes.object.isRequired,
+const PhotoList = (props) => {
+  return(<ul className="photo-list">
+   {props.photos.map((photo, index) =>
+    <PhotoListItem key={index} data={photo} dispatch={props.dispatch} state={props.state}/>
+  )}
+  </ul>)
 };
 
 export default PhotoList;

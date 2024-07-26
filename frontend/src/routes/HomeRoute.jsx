@@ -1,24 +1,21 @@
-import React from 'react';
-import PhotoListItem from '../components/PhotoListItem'; // Adjust the path if necessary
+import React, {useReducer} from 'react';
+import PhotoList from './components/PhotoList';
+import TopNavigation from 'components/TopNavigationBar';
+import TopicList from 'components/TopicList';
+import PhotoList from 'components/PhotoList';
+import FavBadge from 'components/FavBadge';
+import photos from 'mocks/photos';
+import '../styles/HomeRoute.scss';
 
-const HomeRoute = ({ photos, topics, setModal, setSelectedPhoto, modal }) => {
+const HomeRoute = (props) => {
+  const isFavPhotoExist = Object.values(props.state).includes(true);
   return (
     <div className="home-route">
-      {/* Render photos */}
-      <ul>
-        {photos.map((photo) => (
-          <PhotoListItem 
-            key={photo.id} 
-            data={photo} 
-            state={{}} // Pass the appropriate state here
-            dispatch={() => {}} // Pass the appropriate dispatch function here
-            setSelectedPhoto={setSelectedPhoto}
-            setModal={setModal}
-          />
-        ))}
-      </ul>
-      {/* Render topics */}
-      {/* ... */}
+      <TopNavigation>
+        <TopicList topics={props.topics}/>
+        <FavBadge isFavPhotoExist={isFavPhotoExist}/>
+      </TopNavigation>
+      <PhotoList photos={props.photos} dispatch={props.dispatch} state={props.state} />
     </div>
   );
 };
