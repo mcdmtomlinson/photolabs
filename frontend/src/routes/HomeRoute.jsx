@@ -12,7 +12,7 @@ const HomeRoute = (props) => {
         <TopicList topics={props.topics}/>
         <FavBadge />
       </TopNavigation>
-      <PhotoList photos={props.photos} dispatch={dispatch} state={state}/>
+      <PhotoList photos={props.photos} dispatch={props.dispatch} state={props.state}/>
     </div>
   );
 };
