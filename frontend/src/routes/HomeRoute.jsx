@@ -1,19 +1,17 @@
 import React from 'react';
-
 import PhotoList from './components/PhotoList';
-import TopicList from './components/TopicList';
 import TopNavigation from 'components/TopNavigationBar';
-import FavBadge from 'components/FavBadge';
+import TopicList from 'components/TopicList';
+import PhotoList from 'components/PhotoList';
 import '../styles/HomeRoute.scss';
 
-const HomeRoute = () => {
+const HomeRoute = (props) => {
   return (
     <div className="home-route">
-       <TopNavigation>
-        <TopicList />
-        <FavBadge />
+      <TopNavigation>
+        <TopicList topics={props.topics}/>
       </TopNavigation>
-      <PhotoList />
+      <PhotoList photos={props.photos} />
     </div>
   );
 };
