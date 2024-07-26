@@ -3,10 +3,9 @@ import FavIcon from './FavIcon';
 import '../styles/PhotoFavButton.scss';
 
 function PhotoFavButton(props) {
-  console.log("props when favbutton is clicked", props);
   const handleClick = (state) => {
     const action = {
-      type: 'FAVOURITE',
+      type: 'updateToFavPhotoIds',
       payload: !state[props.id],
       id: props.id
     };
