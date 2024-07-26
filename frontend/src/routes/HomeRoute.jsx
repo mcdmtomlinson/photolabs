@@ -1,18 +1,24 @@
-import React, {useReducer, useState} from 'react';
-import TopNavigation from 'components/TopNavigationBar';
-import TopicList from 'components/TopicList';
-import PhotoList from 'components/PhotoList';
-import FavBadge from 'components/FavBadge';
-import '../styles/HomeRoute.scss';
+import React from 'react';
+import PhotoListItem from '../components/PhotoListItem'; // Adjust the path if necessary
 
-const HomeRoute = (props) => {
+const HomeRoute = ({ photos, topics, setModal, setSelectedPhoto, modal }) => {
   return (
     <div className="home-route">
-      <TopNavigation>
-        <TopicList topics={props.topics}/>
-        <FavBadge />
-      </TopNavigation>
-      <PhotoList photos={props.photos} dispatch={props.dispatch} state={props.state}/>
+      {/* Render photos */}
+      <ul>
+        {photos.map((photo) => (
+          <PhotoListItem 
+            key={photo.id} 
+            data={photo} 
+            state={{}} // Pass the appropriate state here
+            dispatch={() => {}} // Pass the appropriate dispatch function here
+            setSelectedPhoto={setSelectedPhoto}
+            setModal={setModal}
+          />
+        ))}
+      </ul>
+      {/* Render topics */}
+      {/* ... */}
     </div>
   );
 };
