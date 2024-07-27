@@ -4,13 +4,13 @@ PhotoLabs is a React App project assignment completed for Web Development Bootca
 # PhotoLabs
 
 ### Main page with all photos.
-![First page]()
+![First page](https://github.com/mcdmtomlinson/photolabs/blob/main/first-page.png)
 
 ### Page shows the user's likes and chaging the icon.
-![Page with likes]()
+![Page with likes](https://github.com/mcdmtomlinson/photolabs/blob/main/liked-page.png)
 
 ### Extra window for larger version of photo and similar photos.
-![Extra]()
+![Extra](https://github.com/mcdmtomlinson/photolabs/blob/main/extra-view.png)
 
 ## Tech Stack
 - React
