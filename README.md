@@ -1,7 +1,24 @@
-# react-photolabs
-The PhotoLabs project for the Web Development React course programming.
+# React App Assignment
+PhotoLabs is a React App project assignment completed for Web Development Bootcamp at Lighthouse Labs.
 
-# Photolabs
+# PhotoLabs
+
+### Main page with all photos.
+![First page]()
+
+### Page shows the user's likes and chaging the icon.
+![Page with likes]()
+
+### Extra window for larger version of photo and similar photos.
+![Extra]()
+
+## Tech Stack
+- React
+- Javascript
+- Axios
+- PostgreSQL
+- SASS
+- Express
 
 ## Setup
 
@@ -14,7 +31,7 @@ cd frontend
 npm start
 ```
 
-## [Backend] Running Backend Servier
+## [Backend] Running Backend Server
 
 Read `backend/readme` for further setup details.
 
