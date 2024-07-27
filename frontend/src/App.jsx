@@ -1,18 +1,16 @@
 import React, {useReducer} from 'react';
-import photos from 'mocks/photos';
-import topics from 'mocks/topics';
-import HomeRoute from 'routes/HomeRoute';
-import PhotoDetailsModal from 'routes/PhotoDetailsModal';
-import useApplicationData from '../src/hooks/useApplicationData'
+import HomeRoute from './routes/HomeRoute';
+import PhotoDetailsModal from './routes/PhotoDetailsModal';
+import useApplicationData from 'hooks/useApplicationData';
+import './App.scss';
 
-// Note: Rendering a single component to build components in isolation
 const App = () => {
   const {
     state, dispatch
   } = useApplicationData();
   return (
   <div className="App">
-    <HomeRoute photos={photos} topics={topics} state={state} dispatch={dispatch}/>
+    <HomeRoute photos={state.photoData} topics={state.topicData} state={state} dispatch={dispatch}/>
     {state.modalDisplay && <PhotoDetailsModal state={state} dispatch={dispatch}/>}
   </div>
   );

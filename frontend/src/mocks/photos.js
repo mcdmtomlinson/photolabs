@@ -1,4 +1,3 @@
-
 const photo1 = {
   "id": "1",
   "location": {
@@ -181,6 +180,8 @@ const photo10 = {
 }
 
 
+
+
 const photos = [
   {
     ...photo1,
@@ -272,7 +273,6 @@ const photos = [
       photo5,
     }
   }
-];
-
+]
 
 export default photos;
